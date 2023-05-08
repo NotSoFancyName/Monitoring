@@ -26,3 +26,7 @@ services:
     ports:
       - 3000:3000
     user: '104'
+    volumes:
+      - type: bind
+        source: ./grafana/config/grafana.ini
+        target: /etc/grafana/grafana.ini
