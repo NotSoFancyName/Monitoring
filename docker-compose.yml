@@ -44,8 +44,6 @@ services:
       - 9090
     ports:
       - 9090:9090
-    networks:
-      - monitoring
   grafana:
     image: grafana/grafana-enterprise:8.2.0
     ports:
@@ -55,3 +53,5 @@ services:
       - type: bind
         source: ./grafana/config/grafana.ini
         target: /etc/grafana/grafana.ini
+    networks:
+      - monitoring
