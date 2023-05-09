@@ -3,6 +3,7 @@ version: '3.8'
 
 volumes:
   prometheus_data: {}
+  grafana_data: {}
 
 services:
   node-exporter:
@@ -46,6 +47,5 @@ services:
       - 3000:3000
     user: '104'
     volumes:
-      - type: bind
-        source: ./grafana/config/grafana.ini
-        target: /etc/grafana/grafana.ini
+      - ./grafana/config/grafana.ini:/etc/grafana/grafana.ini
+      - grafana_data:/var/lib/postgresql/data
