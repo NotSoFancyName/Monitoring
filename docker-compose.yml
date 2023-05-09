@@ -48,4 +48,4 @@ services:
     user: '104'
     volumes:
       - ./grafana/config/grafana.ini:/etc/grafana/grafana.ini
-      - grafana_data:/var/lib/postgresql/data
+      - grafana_data:/var/lib/grafana
